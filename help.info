@@ -1,0 +1,24 @@
+
+echo "export SENDGRID_API_KEY='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'" > sendgrid.env
+echo "sendgrid.env" >> .gitignore
+source ./sendgrid.env
+
+
+
+
+
+{
+  "content": {
+    "type": "text/plain",
+    "value": "Welcoming you in My company..."
+  },
+  "from": {
+    "email": "sanil.shinde.200@gmail.com",
+    "name": "sanil shinde"
+  },
+  "subject": "Welcome Email",
+  "to": {
+    "email": "sanil.shinde404@gmail.com",
+    "name": "sanil shinde 2"
+  }
+}
