@@ -1,6 +1,7 @@
 package com.springify.mailer.emailservice.mail;
 
 import java.io.IOException;
+import java.util.Base64;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class EmailServiceImpl implements EmailService{
 	public void sendSimpleMessage(Email from, String subject, Email to, Content content) throws IOException{
 		Mail mail= new Mail(from, subject, to, content);
 		
-		SendGrid sg=new SendGrid(sendGridApiKey);
+		SendGrid sg=new SendGrid(new String (Base64.getDecoder().decode(sendGridApiKey)));
 		Request req=new Request();
 		
 		try {
